@@ -1,0 +1,28 @@
+{
+  "name": "touch-readme",
+  "version": "0.0.1",
+  "description": "Help me create README.md file with the templates",
+  "bin": {
+    "touch-readme": "./bin/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giscafer/touch-readme.git"
+  },
+  "keywords": [
+    "readme",
+    "tool",
+    "make readme",
+    "create readme",
+    "readme.md"
+  ],
+  "author": "giscafer <giscafer@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/giscafer/touch-readme/issues"
+  },
+  "homepage": "https://github.com/giscafer/touch-readme#readme",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
+}
