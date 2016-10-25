@@ -1,4 +1,9 @@
+/**
+ * @author giscafer<giscafer@outlook.com>
+ * https://github.com/giscafer/touch-readme
+ */
 'use strict'
+
 /**
  * Module dependencies.
  */
@@ -18,8 +23,9 @@ program
     .on('--help', () => {
         console.log('  Examples:');
         console.log();
-        console.log('    $ deploy exec sequential');
-        console.log('    $ deploy exec async');
+        console.log('    $ touch-readme');
+        console.log('    $ touch-readme -n');
+        console.log('    $ touch-readme -c');
         console.log();
     });
 program.parse(process.argv);
@@ -30,18 +36,15 @@ if (!process.argv.slice(2)[0]) {
 }
 
 function npm() {
-    createFile('npm')
-    return;
+    return createFile('npm');
 }
 
 function complex() {
-    createFile('complex')
-    return;
+    return createFile('complex');
 }
 
 function common() {
-    createFile('simple')
-    return;
+    return createFile('simple');
 }
 
 function createFile(type) {
@@ -60,7 +63,7 @@ function createFile(type) {
                 process.exit(-1);
             }
         });
-        console.log('create ' + file + ' success!')
+        console.log('create ' + CRT_FILE + ' success!')
     });
 
 }

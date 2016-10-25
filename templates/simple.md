@@ -1,84 +1,53 @@
-# node-typhoon
+# touch-readme
 
- > **node-typhoon** is a javascript for nodejs library to help you get the typhoon information,including real-time or historical information.
+transform a stream into a quoted string
 
- [![npm](https://img.shields.io/npm/v/node-typhoon.svg?style=flat-square)](https://www.npmjs.com/package/node-typhoon) [![npm](https://img.shields.io/npm/dt/node-typhoon.svg?style=flat-square)](https://www.npmjs.com/package/node-typhoon) [![npm](https://img.shields.io/npm/l/node-typhoon.svg?style=flat-square)](https://www.npmjs.com/package/node-typhoon)
+[![testling badge](https://ci.testling.com/substack/touch-readme.png)](https://ci.testling.com/substack/touch-readme)
 
-## Installation
+[![build status](https://secure.travis-ci.org/substack/touch-readme.png)](http://travis-ci.org/substack/touch-readme)
 
-> **npm install node-typhoon**
+# example
 
-
-## Import It
-
-```js
-var Typhoon = require('node-typhoon');
-
-//or
-
-import Typhoon from 'node-typhoon';
+``` js
+var quote = require('touch-readme');
+process.stdin.pipe(quote()).pipe(process.stdout);
 ```
 
+output:
 
-## Usage & API
+```
+$ echo beep boop | node example/stream.js
+"beep boop\n"
+```
 
-- **typhoonActivity()**  : get typhoon real-time information
-- **typhoonList(year)**  : get typhoon informations during the period of specify **year**
+# methods
 
-*see sample/sample.js*
+``` js
+var quote = require('touch-readme')
+```
 
-```js
+## var q = quote()
 
-var Typhoon=require('node-typhoon');
+Return a transform stream `q` that wraps input in double quotes and adds escape
+characters to the chunks.
 
-// get real-time information
-Typhoon.typhoonActivity().then(data=>{
-	console.log(data);
-	/**
-	 [
-          {
-            "enname": "SARIKA",
-            "lat": "13.90",
-            "lng": "126.70",
-            "movedirection": "西北西",
-            "movespeed": "10",
-            "name": "莎莉嘉",
-            "power": "10",
-            "pressure": "985",
-            "radius10": null,
-            "radius7": "200",
-            "speed": "25",
-            "strong": "强热带风暴",
-            "tfid": "201621",
-            "time": "2016-10-14 11:00:00",
-            "timeformate": "10月14日11时"
-          }
-        ]
-	 */
-}).catch(err=>{
-	console.error(err)
-});
+# usage
 
-// get historical information
-Typhoon.typhoonList(2016).then(data=>{
-	console.log(data);
-	//list of 2016 typhoon information
-}).catch(err=>{
-	console.error(err)
-});
+```
+usage: touch-readme
+
+  Transform stdin to a quoted string on stdout.
 
 ```
 
+# install
 
-## Test
+With [npm](https://npmjs.org) do:
 
-> npm install
-> 
-> npm test
+```
+npm install touch-readme
+```
 
-
-## License
+# license
 
 MIT
-
-

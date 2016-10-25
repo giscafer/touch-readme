@@ -1,76 +1,31 @@
-# node-typhoon
+# touch-readme
 
- > **node-typhoon** is a javascript for nodejs library to help you get the typhoon information,including real-time or historical information.
+ > **touch-readme** Help me create README.md file with the templates.
 
- [![npm](https://img.shields.io/npm/v/node-typhoon.svg?style=flat-square)](https://www.npmjs.com/package/node-typhoon) [![npm](https://img.shields.io/npm/dt/node-typhoon.svg?style=flat-square)](https://www.npmjs.com/package/node-typhoon) [![npm](https://img.shields.io/npm/l/node-typhoon.svg?style=flat-square)](https://www.npmjs.com/package/node-typhoon)
+ [![npm](https://img.shields.io/npm/v/touch-readme.svg?style=flat-square)](https://www.npmjs.com/package/touch-readme) [![npm](https://img.shields.io/npm/dt/touch-readme.svg?style=flat-square)](https://www.npmjs.com/package/touch-readme) [![npm](https://img.shields.io/npm/l/touch-readme.svg?style=flat-square)](https://www.npmjs.com/package/touch-readme)
+
+
+# Usage
 
 ## Installation
 
-> **npm install node-typhoon**
+> **npm install touch-readme -g**
 
 
 ## Import It
 
 ```js
-var Typhoon = require('node-typhoon');
+var test = require('touch-readme');
 
 //or
 
-import Typhoon from 'node-typhoon';
+import test from 'touch-readme';
 ```
 
-
-## Usage & API
-
-- **typhoonActivity()**  : get typhoon real-time information
-- **typhoonList(year)**  : get typhoon informations during the period of specify **year**
-
-*see sample/sample.js*
-
-```js
-
-var Typhoon=require('node-typhoon');
-
-// get real-time information
-Typhoon.typhoonActivity().then(data=>{
-	console.log(data);
-	/**
-	 [
-          {
-            "enname": "SARIKA",
-            "lat": "13.90",
-            "lng": "126.70",
-            "movedirection": "西北西",
-            "movespeed": "10",
-            "name": "莎莉嘉",
-            "power": "10",
-            "pressure": "985",
-            "radius10": null,
-            "radius7": "200",
-            "speed": "25",
-            "strong": "强热带风暴",
-            "tfid": "201621",
-            "time": "2016-10-14 11:00:00",
-            "timeformate": "10月14日11时"
-          }
-        ]
-	 */
-}).catch(err=>{
-	console.error(err)
-});
-
-// get historical information
-Typhoon.typhoonList(2016).then(data=>{
-	console.log(data);
-	//list of 2016 typhoon information
-}).catch(err=>{
-	console.error(err)
-});
-
-```
+# Methods
 
 
-## Test
+# Test
 
 > npm install
 > 
@@ -81,4 +36,9 @@ Typhoon.typhoonList(2016).then(data=>{
 
 MIT
 
+---
+
+> [giscafer.com](http://giscafer.com) &nbsp;&middot;&nbsp;
+> GitHub [@giscafer](https://github.com/giscafer) &nbsp;&middot;&nbsp;
+> Weibo [@Nickbing Lao](https://weibo.com/laohoubin)
 
