@@ -32,7 +32,7 @@ import test from 'touch-readme';
 > npm test
 
 
-## License
+# License
 
 MIT
 
