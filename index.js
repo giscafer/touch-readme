@@ -54,12 +54,13 @@ function common(f) {
 }
 
 function createFile(f, type) {
-    let file;
+    let disFile;
+    type = type ? type : 'simple';
+    let file = path.join(TEMP_PATH, type + '.md');
     if (f) {
-        file = f;
+        disFile = f;
     } else {
-        type = type ? type : 'simple';
-        file = path.join(TEMP_PATH, type + '.md');
+        disFile=CRT_FILE;
     }
 
     fs.readFile(file, (err, data) => {
@@ -69,13 +70,13 @@ function createFile(f, type) {
         }
         let contents = data.toString('utf-8');
         // contents = contents.replace(/touch-readme/g, pkg.name);
-        fs.writeFile(CRT_FILE, contents, (err) = {
+        fs.writeFile(disFile, contents, (err) = {
             if (err) {
                 console.log(err);
                 process.exit(-1);
             }
         });
-        console.log('create ' + CRT_FILE + ' success!')
+        console.log('create ' + disFile + ' success!')
     });
 }
 
