@@ -1,0 +1,1 @@
+require('../').init('G:/GitHub/_npm/touch-readme/templates/nl3.md');
